@@ -14,7 +14,7 @@ router
         else {
             g.writeCacheAndOutput(res, path);
         }
-        
+
     });
 
 app

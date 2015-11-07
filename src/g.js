@@ -38,6 +38,7 @@ function cacheHandler(res) {
 }
 
 function output(res, content) {
+    res.header('Access-Control-Allow-Origin', config.cors);
     res.json(content);
 }
 
@@ -57,8 +58,7 @@ module.exports =  {
     writeCacheAndOutput: function(res, path) {
         unirest.get(config.gitHubUrl + path)
             .headers({
-                'User-Agent': config.userAgent, // https://developer.github.com/v3/#user-agent-required
-                'Access-Control-Allow-Origin': config.cors
+                'User-Agent': config.userAgent // https://developer.github.com/v3/#user-agent-required
             })
             .end(ghHandler(res, getPath(path)));
     }

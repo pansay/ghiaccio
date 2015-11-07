@@ -8,7 +8,7 @@ router
     .get('/:path(*)', function (req, res) {
         var path = req.params.path;
 
-        if (g.isCached(path)) {
+        if (g.isCached(path) && g.isCacheFresh(path, config.cacheExp)) {
             g.getCacheAndOutput(res, path);
         }
         else {

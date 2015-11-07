@@ -45,6 +45,12 @@ module.exports =  {
     isCached: function(path) {
         return fs.existsSync(getPath(path));
     },
+    isCacheFresh: function(path, cacheExp) {
+        var stats = fs.statSync(getPath(path)),
+            cacheTime = stats.mtime.getTime(),
+            nowTime = (new Date()).getTime();
+        return cacheTime + cacheExp > nowTime;
+    },
     getCacheAndOutput: function(res, path) {
         fs.readFile(getPath(path), cacheHandler(res));
     },

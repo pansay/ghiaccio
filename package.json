@@ -11,6 +11,8 @@
   "license": "UNLICENSE",
   "dependencies": {
     "express": "~4.13.3",
-    "unirest": "~0.4.2"
+    "unirest": "~0.4.2",
+    "fs": "0.0.2",
+    "mkdirp": "~0.5.1"
   }
 }

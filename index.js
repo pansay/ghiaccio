@@ -19,6 +19,6 @@ router
 
 app
     .use('/', router)
-    .listen(config.port, function() {
+    .listen(process.env.PORT || config.port, function() {
         console.log('Ghiaccio started.');
     });

@@ -3,6 +3,6 @@
     "port": 1337,
     "gitHubUrl": "https://api.github.com/repos/thecivilized/thecivilized/contents/",
     "userAgent": "ghiaccio",
-    "cacheExp": 60 * 60 * 1000, // 1 hour
+    "cacheExp": 3600000,
     "cors": "*"
 }
